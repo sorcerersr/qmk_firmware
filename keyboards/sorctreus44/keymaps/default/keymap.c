@@ -1,14 +1,23 @@
 
 #include QMK_KEYBOARD_H
 
-// ü   RALT(KC_Y)
-// ö   RALT(KC_P)
-// ä   RALT(KC_Q)
-// ß   RALT(KC_S)
-#define KC_UE  RALT(KC_Y)
-#define KC_OE  RALT(KC_P)
-#define KC_AE  RALT(KC_Q)
-#define KC_SZ  RALT(KC_S)
+// UnicodeMap sends actual characters regardless of OS layout.
+// Keep US/ANSI layout on the OS — shift+/→?, etc. all work normally.
+// Umlauts are sent as Unicode code points via the unicode_map table below.
+#define KC_UE  QK_UNICODEMAP + 0   // ü (index 0)
+#define KC_OE  QK_UNICODEMAP + 1   // ö (index 1)
+#define KC_AE  QK_UNICODEMAP + 2   // ä (index 2)
+#define KC_SZ  QK_UNICODEMAP + 3   // ß (index 3)
+#define KC_EUR QK_UNICODEMAP + 4   // € (index 4)
+
+// Unicode character map: each entry is a 32-bit Unicode code point (little-endian)
+const uint32_t PROGMEM unicode_map[] = {
+    [0] = 0x00FC,  // ü
+    [1] = 0x00F6,  // ö
+    [2] = 0x00E4,  // ä
+    [3] = 0x00DF,  // ß
+    [4] = 0x20AC,  // €
+};
 
 
 enum layer_names {
@@ -42,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *       voldn  super shift bksp ctrl || alt space   L0  prtsc scroll pause
    */
   [_LW] = LAYOUT( /* [> LOWER <] */
-    KC_INS,  KC_HOME, KC_UP,   KC_END,  KC_PGUP,                   KC_UP,   KC_F7,   KC_F8,   KC_F9,   KC_F10  ,
+    KC_INS,  KC_HOME, KC_EUR,  KC_END,  KC_PGUP,                   KC_UP,   KC_F7,   KC_F8,   KC_F9,   KC_F10  ,
     KC_DEL,  KC_SZ, KC_DOWN, KC_UE, KC_PGDN,                   KC_DOWN, KC_F4,   KC_F5,   KC_F6,   KC_F11  ,
     KC_KB_MUTE, KC_VOLU, KC_BRIU, KC_OE, KC_AE,   _______, _______, KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F12  ,
     KC_NO,   KC_VOLD, KC_BRID, KC_LSFT, KC_BSPC, KC_LCTL, KC_LALT, KC_SPC,  TO(_QW), KC_PSCR, KC_SLCK, QK_BOOT )
