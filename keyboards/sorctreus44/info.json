@@ -3,6 +3,7 @@
     "keyboard_name": "sorctreus44",
     "maintainer": "sorcerersr",
     "bootloader": "atmel-dfu",
+    "pin_compatible": "promicro",
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
