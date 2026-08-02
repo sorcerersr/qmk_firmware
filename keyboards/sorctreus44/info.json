@@ -1,20 +1,20 @@
 {
-    "manufacturer": "Stefan Rabmund",
+    "manufacturer": "Sorcarion",
     "keyboard_name": "sorctreus44",
     "maintainer": "sorcerersr",
-    "bootloader": "atmel-dfu",
+    "bootloader": "caterina",
     "pin_compatible": "promicro",
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
-        "command": false,
-        "console": false,
+        "command": true,
+        "console": true,
         "extrakey": true,
         "mousekey": false,
         "nkro": true
     },
     "matrix_pins": {
-        "cols": ["D1", "D0", "D4", "C6", "D7", "E6", "B3", "B1", "F7", "F6", "F5", "F4"],
+        "cols": ["F4", "F5", "F6", "F7", "B1", "B3", "E6", "D7", "C6", "D4", "D0", "D1"],
         "rows": ["B4", "B5", "B2", "B6"]
     },
     "processor": "atmega32u4",
