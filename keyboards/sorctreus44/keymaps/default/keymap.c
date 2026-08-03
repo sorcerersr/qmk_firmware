@@ -1,24 +1,16 @@
 
 #include QMK_KEYBOARD_H
 
-// UnicodeMap sends actual characters regardless of OS layout.
-// Keep US/ANSI layout on the OS — shift+/→?, etc. all work normally.
-// Umlauts are sent as Unicode code points via the unicode_map table below.
-#define KC_UE  QK_UNICODEMAP + 0   // ü (index 0)
-#define KC_OE  QK_UNICODEMAP + 1   // ö (index 1)
-#define KC_AE  QK_UNICODEMAP + 2   // ä (index 2)
-#define KC_SZ  QK_UNICODEMAP + 3   // ß (index 3)
-#define KC_EUR QK_UNICODEMAP + 4   // € (index 4)
-
-// Unicode character map: each entry is a 32-bit Unicode code point (little-endian)
-const uint32_t PROGMEM unicode_map[] = {
-    [0] = 0x00FC,  // ü
-    [1] = 0x00F6,  // ö
-    [2] = 0x00E4,  // ä
-    [3] = 0x00DF,  // ß
-    [4] = 0x20AC,  // €
-};
-
+// ü   RALT(KC_Y)
+// ö   RALT(KC_P)
+// ä   RALT(KC_Q)
+// ß   RALT(KC_S)
+// €   RALT(KC_5)
+#define KC_UE  RALT(KC_Y)
+#define KC_OE  RALT(KC_P)
+#define KC_AE  RALT(KC_Q)
+#define KC_SZ  RALT(KC_S)
+#define KC_EUR RALT(KC_5)
 
 enum layer_names {
     _QW,
