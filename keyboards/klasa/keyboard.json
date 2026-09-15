@@ -1,6 +1,6 @@
 {
-    "manufacturer": "Stefan Rabmund",
-    "keyboard_name": "klasa",
+    "manufacturer": "SorcKB",
+    "keyboard_name": "Klasa",
     "maintainer": "sorcerersr",
     "bootloader": "caterina",
     "development_board": "promicro",
@@ -8,7 +8,7 @@
     "features": {
         "bootmagic": true,
         "extrakey": true,
-        "mousekey": true,
+        "mousekey": false,
         "nkro": true
     },
     "matrix_pins": {
