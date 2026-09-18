@@ -49,7 +49,7 @@
 // hold-taps include the ones that don't produce text when tapped.
 // Keep this value low if you press Enter or Escape by mistake too often.
 
-// #define SHORT_TAPPING_TERM 150
+#define SHORT_TAPPING_TERM 225
 
 // When tapping then holding the same tap-hold, if the delay between the two
 // key presses is lower than `QUICK_TAP`, the tap-hold will hold the tap action
