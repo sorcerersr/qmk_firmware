@@ -27,7 +27,7 @@
             "pin": "D2"
         },
         "usb_detect": {
-            "enabled": true
+            "enabled": false
         }
     },
     "layouts": {
